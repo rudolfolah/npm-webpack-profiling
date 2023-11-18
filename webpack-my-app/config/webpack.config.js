@@ -4,6 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const resolve = require('resolve');
+// const HeapSamplingPlugin = require("../../../heap-sampling-webpack-plugin/lib");
+const HeapSamplingPlugin = require("heap-sampling-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
@@ -563,6 +565,12 @@ module.exports = function (webpackEnv) {
       ].filter(Boolean),
     },
     plugins: [
+      new HeapSamplingPlugin({
+        outputPath: "./example.heapprofile",
+        checkPeakMemory: true,
+        checkPeakMemoryInterval: 1000,
+        heapProfile: true,
+      }),
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(
