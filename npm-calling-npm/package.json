@@ -1,0 +1,18 @@
+{
+    "scripts":{
+        "direct": "node ./main.js",
+        "layer0": "npm run direct",
+        "layer1": "npm run layer0",
+        "layer2": "npm run layer1",
+        "layer3": "npm run layer2",
+        "layer4": "npm run layer3",
+        "layer5": "npm run layer4",
+        "mem:direct": "node --expose-gc --trace-gc --trace-gc-ignore-scavenger --trace-gc-verbose ./main.js",
+        "mem:layer0": "whereis npm | cut -d':' -f2 | xargs -I {} node --expose-gc --trace-gc --trace-gc-ignore-scavenger --trace-gc-verbose {} run mem:direct",
+        "mem:layer1": "whereis npm | cut -d':' -f2 | xargs -I {} node --expose-gc --trace-gc --trace-gc-ignore-scavenger --trace-gc-verbose {} run mem:layer0",
+        "mem:layer2": "whereis npm | cut -d':' -f2 | xargs -I {} node --expose-gc --trace-gc --trace-gc-ignore-scavenger --trace-gc-verbose {} run mem:layer1",
+        "mem:layer3": "whereis npm | cut -d':' -f2 | xargs -I {} node --expose-gc --trace-gc --trace-gc-ignore-scavenger --trace-gc-verbose {} run mem:layer2",
+        "mem:layer4": "whereis npm | cut -d':' -f2 | xargs -I {} node --expose-gc --trace-gc --trace-gc-ignore-scavenger --trace-gc-verbose {} run mem:layer3",
+        "mem:layer5": "whereis npm | cut -d':' -f2 | xargs -I {} node --expose-gc --trace-gc --trace-gc-ignore-scavenger --trace-gc-verbose {} run mem:layer4"
+    }
+}
