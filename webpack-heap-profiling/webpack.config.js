@@ -5,7 +5,12 @@ module.exports = {
     entry: {
         example: './example/main.js'
     },
+    parallelism: 1,
     mode: 'production',
+    resolve: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        symlinks: false,
+    },
     output: {
         clean: true,
         filename: '[name].bundle.js'
