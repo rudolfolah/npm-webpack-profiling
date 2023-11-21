@@ -570,6 +570,9 @@ module.exports = function (webpackEnv) {
         checkPeakMemoryInterval: 1000,
         heapProfile: true,
       }),
+      new webpack.debug.ProfilingPlugin({
+        outputPath: path.join(__dirname, '..', 'profileEvents.json'),
+      }),
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(

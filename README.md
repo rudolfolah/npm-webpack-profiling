@@ -9,3 +9,6 @@ This is a plugin that provides heap memory profiling. This is in contrast to [We
 
 * The source code for heap-sampling-webpack-plugin: https://github.com/kenotron/heap-sampling-webpack-plugin
 * The npm package for heap-sampling-webpack-plugin: https://www.npmjs.com/package/heap-sampling-webpack-plugin
+
+## Webpack Profiling Plugin
+This is a plugin that generates a JSON file that can be loaded into Chrome Dev Tools to profile event timings. [It is included with webpack.](https://webpack.js.org/plugins/profiling-plugin/)
