@@ -55,7 +55,7 @@
     "source-map-loader": "^3.0.0",
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.0.2",
-    "terser-webpack-plugin": "^5.2.5",
+    "terser-webpack-plugin": "rudolfolah/terser-webpack-plugin#update-terser-version",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4",
     "webpack": "^5.64.4",
